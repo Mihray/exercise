@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ElementUI form 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css';
+import '../plugins/element.js'
+import Element from 'element-ui'
+import 'font-awesome/css/font-awesome.min.css'
+import axios from 'axios'
 
-Vue.use(ElementUI);
+Vue.prototype.axios=axios //挂载到原型，可以全局使用
+Vue.use(Element)
 Vue.config.productionTip = false
 
 new Vue({
