@@ -6,10 +6,14 @@
                 <span>通用后台管理系统</span>
             </div>
         <el-form  label-width="80px" :model="form" ref="form">
-            <el-form-item label="用户名" prop="username">
+            <el-form-item label="用户名" prop="username"
+            :rules="[{required:true,maessage:'请输入用户名',trigger:'blur'},
+                     {min:4,max:10,message:'长度在4-10位字符之间',trigger:'blur'}]">
                 <el-input v-model="form.username"></el-input>
             </el-form-item>
-            <el-form-item label="密码"   prop="password">
+            <el-form-item label="密码"   prop="password"
+            :rules="[{required:true,maessage:'请输入用户名',trigger:'blur'},
+                     {min:4,max:10,message:'长度在4-10位字符之间',trigger:'blur'}]">
                 <el-input type="password" v-model="form.password"></el-input>
             </el-form-item>
             <el-form-item >
