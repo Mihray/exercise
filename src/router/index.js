@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '../components/Home.vue'
+import Home from '../components/Home.vue'
 
 Vue.use(Router)
 
@@ -17,8 +17,9 @@ export default new Router({
             component:()=>import('@/component/LoginVue.vue')//路由的配置
         },
         {
-            path:'/home',
-            //component:Home
+            path:'/Home',
+            name:'Home',
+            // component:Home
             component:()=>import('@/component/Home.vue')//路由的配置
         }
     ],
