@@ -65,8 +65,8 @@ export default {
             this.$refs[form].validate((valid)=>{
                 if(valid){
                     console.log(this.form)
-                    console.log(this)
-                    // this.axios.post('http://111.229.176.245:3000/mtapi/mihray/login',this.form)
+                    console.log('post', this)
+                    this.axios.post('http://111.229.176.245:3000/mtapi/mihray/login',this.form)
                     this.axios.post('/mtapi/mihray/login', {
                                     userName: 'mihray',
                                     password: '123456'
@@ -84,8 +84,8 @@ export default {
                         if( res.status===200){
                             localStorage.setItem('userName',res.data.userName)
                             this.$message({message:res.data.message,type:'success'})
-                            // this.$router.push('/Home')
-                            console.log(this)
+                            this.$router.push('/Home')
+                            console.log('res的this:',this)
                         }
                     })
                     .catch(err=>{
