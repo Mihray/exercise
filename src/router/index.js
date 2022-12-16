@@ -1,10 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '../components/Home.vue'
+import Home from '../components/Home.vue'
+// import LoginVue from '../components/LoginVue.vue'
 
 Vue.use(Router)
+Home.use(Router)
 
-const router = new Router({
+// const routes= [
+//     { path:'/',
+//     component:Home}
+// ]
+// const router=VueRouter.createRouter({
+//     history:Router.createWebHashHistory(),
+//     routes:routes
+// })
+export default new Router({
     routes:[
         {
             path:'/',
@@ -13,16 +23,15 @@ const router = new Router({
         },
         {
             path:'/login',
-            name:'LoginVue',
+            name:'Login',
             component:()=>import('../components/LoginVue.vue')//路由的配置
         },
         {
-            path:'/Home',
-            name:'Home',
-            // component:Home
-            component:()=>import('../components/Home.vue')//路由的配置
+            path:'/home',
+            component:Home
+            // component:()=>import('../component/Home.vue')//路由的配置
         }
     ],
     mode:'history'
 })
-export default router
+// export default router
